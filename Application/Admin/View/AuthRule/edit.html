@@ -1,0 +1,86 @@
+<!--body wrapper start-->
+<div class="wrapper">
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                	添加系统功能
+            </header>
+            <div class="panel-body">
+                <div class="form">
+                    <form class="cmxform form-horizontal adminex-form" id="signupForm" method="post" action="{:U('AuthRule/edit')}">
+                        <div class="form-group ">
+                            <label for="firstname" class="control-label col-lg-2">上级菜单</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-bot15" name="pid">
+                                <option value="0">顶级菜单</option>
+                                <volist name="top" id="vo">
+                                <option value="{$vo.id}" <eq name="vo.id" value="$info.pid"> selected="selected" </eq>>{$vo.title}</option>
+                                </volist>
+                            	</select>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">功能名称</label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="{$info.title}" id="title" name="title"  type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">URL</label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="{$info.url}" id="url" name="url"  type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="firstname" class="control-label col-lg-2">是否在菜单栏显示</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-bot15" name="is_menu">
+                                <option value="1" <eq name="info.is_menu" value="1"> selected="selected" </eq>>显示</option>
+                                <option value="2" <eq name="info.is_menu" value="2"> selected="selected" </eq>>不显示</option>
+                            	</select>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="firstname" class="control-label col-lg-2">状态</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-bot15" name="status">
+                                <option value="1" <eq name="info.status" value="1"> selected="selected" </eq>>开放</option>
+                                <option value="2" <eq name="info.status" value="2"> selected="selected" </eq>>关闭</option>
+                            	</select>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">图标<a href="{:U('Icon/fontawesome')}" target="_blank"> 《样例》</a></label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="{$info.icon}" id="icon" name="icon"  type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">标识</label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="{$info.mark}" id="mark" name="mark"  type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">排序</label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="{$info.sort}" id="sort" name="sort"  type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                            	<input type="hidden" name="submit" value="submit" />
+                            	<input type="hidden" name="id" value="{$info.id}" />
+                                <button class="btn btn-primary" type="submit">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<!--body wrapper end-->

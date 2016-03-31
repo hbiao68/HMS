@@ -1,0 +1,45 @@
+ <div id="container">
+ 		<volist name="ad" id="vo">
+		 <div class="zy_banner"><a href="{$vo.url}" target="_blank"><img src="{$vo.img}" / ></a></div>	
+		</volist>
+<div class="main">
+<div style="float: left;">
+   <div class="main_l">
+      <div class="title"><img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>新闻</div><span>{$newCat}</span></div>
+      <div class="wisdom" >
+       	 <volist name="news" id="vo">
+         <div style="border:1px solid #CCCCCC;">
+             <h3><a href="#" style="color:#052f83;">{$vo.name}</a></h3>
+             <p><empty name="vo.img"><else/><img src="{$vo.img}" /></empty></p>
+             <p>{$vo.content}</p>
+         </div>
+         </volist>
+         
+         
+      </div>
+      
+   </div>
+   <div style="clear: both;"></div>
+   		<div class="pages">
+      	<ul class="pagination_page">
+      	{$page}
+      	</ul>
+      </div>
+   </div>
+   <div class="main_r">
+       <div class="service">
+          <div class="about_title"><img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>目录</div></div>
+          <div class="directory">
+              <ul>
+              	<volist name="cat" id="vo">
+                 <li <eq name="Think.get.cid" value="$vo.id"> class="bcdqxsxg" </eq>><a href="{:U('News/index',array('cid'=>$vo['id']))}">{$vo.name}</a></li>
+                 </volist>
+              </ul>
+          </div>
+       </div>
+       
+       
+   </div>
+</div>
+</div>
+<div class="clear"></div>

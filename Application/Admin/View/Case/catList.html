@@ -1,0 +1,48 @@
+        <!--body wrapper start-->
+        <div class="wrapper">
+        <div class="row">
+        <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                	案例分类列表
+                        <span class="tools pull-right">
+                        	<a href="{:U('Case/catAdd')}" class="fa">添加案例分类</a>
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <!-- <a href="javascript:;" class="fa fa-times"></a> -->
+                         </span>
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>分类名称</th>
+                            <th>上级分类</th>
+                            <th class="numeric">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.parent_name}</td>
+                            <td class="numeric"><a href="{:U('Case/catEdit',array('id'=>$vo['id']))}" class="edit">修改</a></td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                	<div>
+                    	<ul class="pagination">
+                            {$page}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        </div>
+        </div>
+        </div>
+        <!--body wrapper end-->

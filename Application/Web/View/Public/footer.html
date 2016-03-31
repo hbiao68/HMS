@@ -1,0 +1,92 @@
+<div class="footer">
+   <div class="footer_t">
+   <volist name="getMenuFooter" id="vo">
+   		<a href="{$vo.url}">{$vo.name}</a><span>│</span>
+   </volist>
+     <!-- <img src="__PUBLIC__/Static/Web/imgaes/img_17.png" /> -->
+   </div>
+   <div class="footer_b">
+    {$footer_content} 
+	<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F85c5cb416d29180e3b57cf4a657505a6' type='text/javascript'%3E%3C/script%3E"));
+</script></p>
+   </div>
+   <script type="text/javascript">
+$(document).ready(function(){
+  $(".hide").click(function(){
+  $("#facebox").hide();
+  });
+  $(".show").click(function(){
+  $("#facebox").show();
+  });
+});
+</script>
+   <div id="facebox">
+    <div class="popup">
+      <table>
+        <tbody>
+          <tr>
+            <td class="tl"/><td class="b"/><td class="tr"/>
+          </tr>
+          <tr>
+            <td class="b"/>
+            <td class="body">
+              <div class="content">
+              </div>
+              <div class="footer">
+                <a href="#" class="hide close"><img src="__PUBLIC__/Static/Web/imgaes/djxtp.jpg" /></a>
+                <ul>
+                  <li>
+                    <p></p>
+                    <h2>大旗案例手册</h2>
+                    <a href="http://adhao.hnjyhb.com.cn/adhao.rar" target="_blank"><img src="__PUBLIC__/Static/Web/imgaes/djxzan.jpg" /></a>
+                  </li>
+                  
+                  
+                </ul>
+              </div>
+            </td>
+            <td class="b"/>
+          </tr>
+          <tr>
+            <td class="bl"/><td class="b"/><td class="br"/>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+function closed()
+{ var aaa=document.getElementById("zxkfck");
+ aaa.style.display="none"}
+</script>
+  <div id="zxkfck" class="zxkfck">
+    <div class="zxkfckt">
+      <h2>QQ在线咨询</h2>
+      <span title="点击关闭" onclick="closed();">x</span>
+    </div>
+    <div class="zxkfcktnr">
+      <ul>
+      	<volist name="qq" id="vo">
+        <li><a  target=blank href=tencent://message/?uin={$vo}&Site=在线客服1&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:{$vo}:3 alt="点击这里给我发消息"> </a></li>
+        </volist>
+      </ul>
+    </div>
+	<div class="zxkfckt">
+      <h2>{$phone}</h2>
+      
+    </div>
+  </div>
+   <script type="text/javascript" src="__PUBLIC__/Static/Web/js/manhuatoTop.1.0.js"></script>
+<script type="text/javascript">
+$(function (){
+	$(window).manhuatoTop({
+		showHeight : 100,//设置滚动高度时显示
+		speed : 500 //返回顶部的速度以毫秒为单位
+	});
+});
+</script>
+</div>
+</body>
+</html>

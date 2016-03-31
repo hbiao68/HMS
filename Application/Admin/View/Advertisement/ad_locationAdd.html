@@ -1,0 +1,58 @@
+<!--body wrapper start-->
+<div class="wrapper">
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                	添加广告位
+            </header>
+            <div class="panel-body">
+                <div class="form">
+                    <form class="cmxform form-horizontal adminex-form" id="signupForm" method="post" action="{:U('Advertisement/ad_locationAdd')}">
+                        <div class="form-group ">
+                            <label for="title" class="control-label col-lg-2">广告位名称</label>
+                            <div class="col-lg-10">
+                                <input class="form-control " value="" id="name" name="name"  type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="firstname" class="control-label col-lg-2">是否可用</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-bot15" name="flag">
+                                <option value="1">可用</option>
+                                <option value="2">不可用</option>
+                            	</select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                            	<input type="hidden" name="submit" value="submit" />
+                                <button class="btn btn-primary" type="submit">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<!--body wrapper end-->
+<script>
+function ajaxSelectSort(obj){
+	var url = "{:U(\'AuthRule/ajaxSelectSort\')}";
+    $.ajax({
+       type:'POST',
+       url:url,
+       data:{'id':obj},
+       success: function(response){
+          response = eval("("+response+")");
+          if(response.status == 1){
+        	  //弹出提示信息
+        	  $("#sort").val(response.sort);
+          }
+       }
+    });
+}
+</script>

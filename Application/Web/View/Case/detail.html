@@ -1,0 +1,85 @@
+<div id="container">
+ 		<volist name="ad" id="vo">
+		 <div class="zy_banner"><a href="{$vo.url}" target="_blank"><img src="{$vo.img}" / ></a></div>	
+		</volist>
+</div>
+<div class="main">
+   <div class="main_l">
+      <div class="title"><img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>经典案例</div><span>{$caseCat}</span></div>
+      <div class="wisdom" >
+         <div style="border:1px solid #CCCCCC;">
+             <h3><a href="#" style="color:#052f83;">{$info.name}</a></h3>
+             <p>{$info.content}</p>
+         </div>
+      </div>
+   </div>
+   <div class="main_r">
+       <div class="service">
+          <div class="about_title"><img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>案例分类</div></div>
+          <div class="directory">
+              <ul>
+              	<volist name="cat" id="vo">
+                 <li <eq name="Think.get.cid" value="$vo.id"> class="bcdqxsxg" </eq>><a href="{:U('Case/index',array('cid'=>$vo['id']))}">{$vo.name}</a></li>
+                 </volist>
+              </ul>
+          </div>
+       </div>
+       <div class="brand" style="margin-top:40px;">
+          <div class="about_title"><img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>服务品牌</div></div>
+          <div class="brand_nr">
+             <table cellpadding="0" cellspacing="0">
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_08.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_09.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_10.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_11.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_12.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_15.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_16.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_17.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_18.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_19.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_20.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_21.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_22.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_23.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_24.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_25.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_26.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_27.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_28.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_29.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_30.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_31.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_32.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_33.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_34.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_35.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_36.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_37.jpg" /></a></td>
+                 </tr>
+                 <tr>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_38.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_39.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_40.jpg" /></a></td>
+                    <td><a href="#"><img src="__PUBLIC__/Static/Web/imgaes/img_41.jpg" /></a></td>
+                 </tr>
+             </table>
+          </div>
+       </div>
+       
+   </div>
+</div>
+<div class="clear"></div>

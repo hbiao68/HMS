@@ -1,0 +1,50 @@
+        <!--body wrapper start-->
+        <div class="wrapper">
+        <div class="row">
+        <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                	新闻列表
+                        <span class="tools pull-right">
+                        	<a href="{:U('News/add')}" class="fa">添加新闻</a>
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <!-- <a href="javascript:;" class="fa fa-times"></a> -->
+                         </span>
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>所属分类</th>
+                            <th>标题</th>
+                            <th class="numeric">创建时间</th>
+                            <th class="numeric">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.catname}</td>
+                            <td>{$vo.name}</td>
+                            <td class="numeric"><empty name="vo.createtime" ><else/>{$vo.createtime|date="Y-m-d H:i:s",###}</empty></td>
+                            <td class="numeric"><a href="{:U('News/edit',array('id'=>$vo['id']))}" class="edit">修改</a> | <a href="{:U('News/editStatus',array('id'=>$vo['id'],'status'=>2))}" class="edit">移到回收站</a> | <a href="#" class="edit" target="_blank">预览</a></td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                	<div>
+                    	<ul class="pagination">
+                            {$page}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        </div>
+        </div>
+        </div>
+        <!--body wrapper end-->

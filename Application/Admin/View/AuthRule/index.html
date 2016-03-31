@@ -1,0 +1,134 @@
+<!--body wrapper start-->
+<div class="wrapper">
+<!--search start-->
+<div class="row">
+	<div class="col-lg-12">
+		<section class="panel">
+			<div class="panel-body">
+				<form class="form-inline" role="form" method="get" action="{:U('AuthRule/index')}">
+					<div class="form-group">
+						<label class="sr-only" for="title">title</label> 
+						<input type="text" class="form-control" id="title" name="title" placeholder="功能名称" value="{$Think.get.title}" />
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="url">url</label> 
+						<input type="text" class="form-control" id="url" name="url" placeholder="URL" value="{$Think.get.url}" />
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="pid">pid</label> 
+						<select class="form-control" name="pid">
+							<option value="">请选择上级菜单</option>
+                        	<volist name="top" id="vo">
+                        		<option value="{$vo.id}" <eq name="Think.get.pid" value="$vo.id" >selected="selected"</eq>>{$vo.title}</option>
+                        	</volist>
+                        </select>
+					</div>
+					<div class="form-group" style="width:320px;">
+						<label class="sr-only">Date Range</label>
+							<div class="input-group input-large custom-date-range" data-date="2013-07-13" data-date-format="yyyy-mm-dd">
+								<input type="text" class="form-control dpd1" name="createtime1" id="startdate" style="background-color: #fff;" readonly value="{$Think.get.createtime1}" placeholder="创建时间">
+								<span class="input-group-addon">至</span> 
+								<input type="text" class="form-control dpd2" name="createtime2" id="enddate" style="background-color: #fff;" readonly value="{$Think.get.createtime2}" placeholder="创建时间">
+							</div>
+					</div>
+					<button type="submit" class="btn btn-primary">搜索</button>
+				</form>
+
+			</div>
+		</section>
+
+	</div>
+</div>
+<!--search end-->
+	<div class="row">
+	<div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading">
+                	系统功能列表
+                        <span class="tools pull-right">
+                        	<a href="{:U('AuthRule/add')}" class="fa">添加系统功能</a>
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <!-- <a href="javascript:;" class="fa fa-times"></a> -->
+                         </span>
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>功能名称</th>
+                            <th>URL</th>
+                            <th>上级菜单</th>
+                            <th class="numeric">创建时间</th>
+                            <th class="numeric">状态</th>
+                            <th class="numeric">是否是导航菜单</th>
+                            <th class="numeric">标识</th>
+                            <th class="numeric">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.title}</td>
+                            <td>{$vo.url}</td>
+                            <td>{$vo.parent}</td>
+                            <td class="numeric"><eq name="vo.create_time" value="0"><else/>{$vo.create_time|date="Y-m-d H:i:s",###}</eq></td>
+                            <td>{$vo.status}</td>
+                            <td class="numeric">{$vo.is_menu}</td>
+                            <td class="numeric">{$vo.mark}</td>
+                            <td class="numeric"><a href="{:U('AuthRule/edit',array('id'=>$vo['id']))}" class="edit">修改</a></td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                	<div>
+                    	<ul class="pagination">
+                            {$page}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+	</div>
+	</div>
+</div>
+<!--body wrapper end-->
+<!--pickers css-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/Admin/js/bootstrap-datepicker/css/datepicker-custom.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/Admin/js/bootstrap-timepicker/css/timepicker.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/Admin/js/bootstrap-colorpicker/css/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/Admin/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/Admin/js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+<script type="text/javascript" src="__PUBLIC__/Static/Admin/js/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Static/Admin/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Static/Admin/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Static/Admin/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Static/Admin/js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+	
+$("#startdate").datetimepicker({
+	format: 'yyyy-mm-dd',
+	language:  'zh-CN',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0
+});
+$("#enddate").datetimepicker({
+	format: 'yyyy-mm-dd',
+	language:  'zh-CN',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0
+});
+
+</script>
