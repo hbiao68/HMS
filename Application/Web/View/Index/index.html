@@ -1,43 +1,148 @@
-<div id="container">
-		<div id="example">
-			<div id="slides">
-				<div class="slides_container">
-					<volist name="ad" id="vo">
-					<div>
-						<a href="{$vo.url}" title=""><img src="{$vo.img}" width="998" height="281" alt="Slide 2"></a>
-						
-					</div>	
-					</volist>
+		 
+		 
+		 
+		 <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+				
+				$('.bxslider').bxSlider({
+					auto: true,
+					pager:false
+                });
+			});
+		</script>
+		 <!--start-image-slider---->
+			<div class="width_90 margin_center">					     
+				<ul class="bxslider">
+				<!-- 
+				<li><img src="__PUBLIC__/Static/new_template/images/slider3.jpg" class=" margin_center"/></li>
+				 -->
+				<volist name="ad" id="vo">
+				    
+				    <li>
+					    <a href="{$vo.url}">
+					    	<img src="{$vo.img}" class=" margin_center"/>
+					    </a>
+				    </li>
+				</volist>
+				</ul>
+			</div>					
+		 <!--End-image-slider---->
+		 <!---start-content---->
+		 <div class="content">
+		 	<div class="top-grids">
+		 		<div class="wrap">
+			 		<div class="top-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/icon1.png" title="icon-name" /></a>
+			 			<h3>Bussiness</h3>
+			 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			 			<a class="button" href="#">Read More</a>
+			 		</div>
+			 		<div class="top-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/icon2.png" title="icon-name" /></a>
+			 			<h3>Statistics</h3>
+			 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+			 			<a class="button" href="#">Read More</a>
+			 		</div>
+			 		<div class="top-grid last-topgrid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/icon4.png" title="icon-name" /></a>
+			 			<h3>24x7</h3>
+			 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			 			<a class="button" href="#">Read More</a>
+			 		</div>
+			 		<div class="clear"> </div>
+		 		</div>
+		 	</div>
+		 	<!---start-mid-grids---->
+		 	<div class="mid-grids">
+		 		<div class="wrap">
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider1.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut .</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider2.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed do eiuntre magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider3.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed do eiusmode magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid" id="last">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider4.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipi incididunt ut labore et dolore magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider1.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed dolore magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider2.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed labore et dolore magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider3.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+			 		<div class="mid-grid" id="last">
+			 			<a href="#"><img src="__PUBLIC__/Static/new_template/images/slider4.jpg" title="image-name" /></a>
+			 			<h3>Lorem ipsum</h3>
+			 			<p>consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+			 			<a class="mid-button" href="#">More</a>
+			 		</div>
+		 		<div class="clear"> </div>
+		 		</div>
+		 	</div>
+		 	<!---End-mid-grids---->
+		 	
+		 	<!---start-box----->
+		 	<div class="box">
+		 		<div class="wrap">
+					<div class="gallery">
+						<h3>Gallery</h3>
+						<ul>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider1.jpg"><img src="__PUBLIC__/Static/new_template/images/slider1.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider2.jpg"><img src="__PUBLIC__/Static/new_template/images/slider2.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider3.jpg"><img src="__PUBLIC__/Static/new_template/images/slider3.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider4.jpg"><img src="__PUBLIC__/Static/new_template/images/slider4.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider1.jpg"><img src="__PUBLIC__/Static/new_template/images/slider1.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider2.jpg"><img src="__PUBLIC__/Static/new_template/images/slider2.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider3.jpg"><img src="__PUBLIC__/Static/new_template/images/slider3.jpg" alt=""></a><a href="#"></a></li>
+							<li><a href="__PUBLIC__/Static/new_template/images/slider4.jpg"><img src="__PUBLIC__/Static/new_template/images/slider4.jpg" alt=""></a><a href="#"></a></li>
+						</ul>
+					</div>
+					<script type="text/javascript" src="__PUBLIC__/Static/new_template/js/jquery.lightbox.js"></script>
+				    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/new_template/css/lightbox.css" media="screen">
+				  	<script type="text/javascript">
+				    $(function() {
+				        $('.gallery a').lightBox();
+				    });
+				    </script>
+					<div class="terminals">
+						<h3>Testimonials</h3>
+						<p>sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+						<span><a href="#">- Lorem ipsum</a> USA.</span>
+					</div>
+					<div class="clear"> </div>
 				</div>
-				<a href="#" class="prev"></a>
-				<a href="#" class="next"></a>
-			</div>
-		</div>
-	</div>
-    <div class="main">
-        <div class="main_l">
-            <div class="title">
-                <img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>
-                    经典案例</div>
-            </div>
-            <ul>
-                <volist name="caseList" id="vo">
-                <li><span><a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo.name}</a></span>
-                    <div>
-                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo.cat}</a></div>
-                    <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
-                        <img src="{$vo.img}" width="282" height="184" /></a> 
-                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
-                            <p>{$vo.content}</p>
-                        </a>
-                    <h3>
-                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">查看全文</a><a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}" id="arrow">></a></h3>
-                </li>
-                </volist>
-            </ul>
-        </div>
-	   <include file="Public:right"/>
-    </div>
-    <div class="clear">
-    </div>
+				</div>
+		 	<!---end-box---->
+		 	
 

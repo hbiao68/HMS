@@ -1,0 +1,43 @@
+<div id="container">
+		<div id="example">
+			<div id="slides">
+				<div class="slides_container">
+					<volist name="ad" id="vo">
+					<div>
+						<a href="{$vo.url}" title=""><img src="{$vo.img}" width="998" height="281" alt="Slide 2"></a>
+						
+					</div>	
+					</volist>
+				</div>
+				<a href="#" class="prev"></a>
+				<a href="#" class="next"></a>
+			</div>
+		</div>
+	</div>
+    <div class="main">
+        <div class="main_l">
+            <div class="title">
+                <img src="__PUBLIC__/Static/Web/imgaes/img_03.jpg" /><div>
+                    经典案例</div>
+            </div>
+            <ul>
+                <volist name="caseList" id="vo">
+                <li><span><a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo.name}</a></span>
+                    <div>
+                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">{$vo.cat}</a></div>
+                    <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
+                        <img src="{$vo.img}" width="282" height="184" /></a> 
+                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">
+                            <p>{$vo.content}</p>
+                        </a>
+                    <h3>
+                        <a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}">查看全文</a><a href="{:U('Case/detail',array('cid'=>$vo['cid'],'id'=>$vo['id']))}" id="arrow">></a></h3>
+                </li>
+                </volist>
+            </ul>
+        </div>
+	   <include file="Public:right"/>
+    </div>
+    <div class="clear">
+    </div>
+
